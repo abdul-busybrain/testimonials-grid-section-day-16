@@ -1,0 +1,146 @@
+/* css reset*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* variables */
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+
+  /* ### Neutral */
+
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+
+  /* font */
+  --Barlow-Semi-Condensed: "Barlow Semi Condensed", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: var(--Light-grayish-blue);
+  font-family: var(--Barlow-Semi-Condensed);
+  font-size: 0.8125rem;
+}
+
+.cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  width: 100%;
+  grid-template-areas:
+    "one one two three"
+    "four five five three ";
+  padding: 2rem;
+}
+
+.image-text {
+  display: flex;
+}
+.card1 {
+  position: relative;
+  /* grid-column: 1 / span 2; */
+  grid-area: one;
+  background: var(--Moderate-violet);
+  background-position: top, left;
+  background-repeat: no-repeat;
+}
+.card1::after {
+  position: absolute;
+  content: "";
+  /* background-image: url("./images/bg-pattern-quotation.svg"); */
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  right: -20rem;
+  top: 0;
+  opacity: 90%;
+  z-index: 0;
+}
+
+.card1 .header {
+  z-index: 1;
+}
+
+.username-verficiation {
+  color: var(--Light-gray);
+  padding-bottom: 1em;
+}
+.verification {
+  opacity: 50%;
+}
+.header {
+  padding-bottom: 1em;
+  line-height: 1.2;
+}
+.testimony {
+  color: var(--Light-gray);
+  line-height: 1.2;
+  font-size: 2rem;
+}
+.card2 {
+  grid-area: two;
+  background-color: var(--Very-dark-grayish-blue);
+}
+.card3 {
+  grid-area: three;
+}
+.card4 {
+  grid-area: four;
+}
+.card5 {
+  grid-area: five;
+
+  background-color: var(--Very-dark-blackish-blue);
+}
+img {
+  border-radius: 50%;
+  width: 60%;
+}
+
+.card1,
+.card2,
+.card5 {
+  color: var(--White);
+}
+
+.card4,
+.card3 {
+  background-color: var(--White);
+}
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5 {
+  padding: 3rem;
+  border-radius: 0.75rem;
+}
+
+.tf .header {
+  color: var(--Very-dark-grayish-blue);
+}
+
+.three,
+.four,
+.five {
+  padding-bottom: 0rem;
+}
